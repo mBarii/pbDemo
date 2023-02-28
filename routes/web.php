@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,4 @@ Route::get('/', function () {
 Route::get('/users',[UserController::class, 'index']);
 Route::get( '/user/{id}',[UserController::class, 'show']);
 Route::get('/customers', [CustomerController::class, 'index']);
+Route::get('/rooms', [RoomController::class, 'index']);
