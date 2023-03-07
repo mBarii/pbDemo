@@ -14,7 +14,7 @@ class CustomerFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'lastName'=>fake()->lastname(),
