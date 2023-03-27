@@ -28,3 +28,6 @@ Route::get('/users',[UserController::class, 'index']);
 Route::get( '/user/{id}',[UserController::class, 'show']);
 Route::get('/customers', [CustomerController::class, 'index']);
 Route::get('/rooms', [RoomController::class, 'index']);
+
+Route::get('/delete/{id}',[CustomerController::class, 'delete']);
+Route::get('/logout', [UserController::class, 'logout']);
