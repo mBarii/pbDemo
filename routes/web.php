@@ -31,3 +31,13 @@ Route::get('/rooms', [RoomController::class, 'index']);
 
 Route::get('/delete/{id}',[CustomerController::class, 'delete']);
 Route::get('/logout', [UserController::class, 'logout']);
+
+Route::get('/add/{id}', [CustomerController::class, 'add']);
+
+Route::get('/edit/{id}', [CustomerController::class, 'edit'])->middleware('auth');
+Route::post('/update', [CustomerController::class,'update']);
+
+Route::get('/delete/{id}',[ProductController::class, 'delete']);
+
+Route::get('/edit/{id}', [ProductController::class, 'edit'])->middleware('auth');
+Route::post('/update', [ProductController::class,'update']);

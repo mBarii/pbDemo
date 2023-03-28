@@ -2,6 +2,10 @@
 @include('partials.header')
 <x-nav/>
 
+@if(Session::has('success'))
+<div><p>{{session::get('success')}}</p></div>
+@endif
+
 <table class="table table-hover" style="background-color:#ffe59e" >
   <thead>
     <tr>
@@ -26,8 +30,8 @@
       <td>{{$customer->address}}</td>
       <td>
          
-          <a href="#">Edit</a>
-          <a href="delete/{{$customer->id}}" class="btn btn-outlinr-danger">Delete</a>
+        <a href="edit/{{$customer->id}}" class="btn btn-outlinr-danger">Edit</a>
+        <a href="delete/{{$customer->id}}" class="btn btn-outlinr-danger">Delete</a>
         
         
       </td>
