@@ -39,7 +39,7 @@ class ProductController extends Controller
      * @param  \App\Http\Requests\StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function save(StoreProductRequest $request)
+    public function save(Request $req)
     {
         //
         $validated=$req->validate([
@@ -49,7 +49,7 @@ class ProductController extends Controller
         ]);
 
         $product=Product::create($validated);
-        return redirect("/");
+        return redirect("/products");
     }
 
     /**
@@ -69,7 +69,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
         $data=Product::findorFail($id);
@@ -83,7 +83,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(Request $request)
     {
         //
         $validated=$request->validate([
@@ -98,7 +98,7 @@ class ProductController extends Controller
         $data->price=$request->price;
 
         $data->save();
-        return redirect('/')->withSuccess(__('customer updated'));
+        return redirect('/products')->withSuccess(__('customer updated'));
     }
 
     /**

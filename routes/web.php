@@ -39,8 +39,10 @@ Route::get('/logout', [UserController::class, 'logout']);
 //Route::get('/edit/{id}', [CustomerController::class, 'edit'])->middleware('auth');
 //Route::post('/update', [CustomerController::class,'update']);
 
+Route::post('/save',[ProductController::class,'save']);
+
 Route::get('/delete/{id}',[ProductController::class, 'delete']);
-Route::get('/add/{id}', [ProductController::class, 'add']);
+Route::get('/add', [ProductController::class, 'add']);
 
 Route::get('/edit/{id}', [ProductController::class, 'edit'])->middleware('auth');
 Route::post('/update', [ProductController::class,'update']);
