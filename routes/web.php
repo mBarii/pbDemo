@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,15 +30,17 @@ Route::get( '/user/{id}',[UserController::class, 'show']);
 Route::get('/customers', [CustomerController::class, 'index']);
 Route::get('/rooms', [RoomController::class, 'index']);
 
-Route::get('/delete/{id}',[CustomerController::class, 'delete']);
+Route::get('/products', [ProductController::class, 'index']);
+//Route::get('/delete/{id}',[CustomerController::class, 'delete']);
 Route::get('/logout', [UserController::class, 'logout']);
 
-Route::get('/add/{id}', [CustomerController::class, 'add']);
+//Route::get('/add/{id}', [CustomerController::class, 'add']);
 
-Route::get('/edit/{id}', [CustomerController::class, 'edit'])->middleware('auth');
-Route::post('/update', [CustomerController::class,'update']);
+//Route::get('/edit/{id}', [CustomerController::class, 'edit'])->middleware('auth');
+//Route::post('/update', [CustomerController::class,'update']);
 
 Route::get('/delete/{id}',[ProductController::class, 'delete']);
+Route::get('/add/{id}', [ProductController::class, 'add']);
 
 Route::get('/edit/{id}', [ProductController::class, 'edit'])->middleware('auth');
 Route::post('/update', [ProductController::class,'update']);

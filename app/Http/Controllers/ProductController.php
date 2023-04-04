@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Validate\Rule;
+use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller
 {
@@ -15,9 +18,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-        $data = DB::table("createProducts")->get();
-        return view('createProduct.index',['createProducts'=>$data]);
+        $data = DB::table("products")->get();
+        return view('product.index',['products'=>$data]);
     }
 
     /**
